@@ -7,6 +7,9 @@
 
  this.currentIndex = 0;
 
+ this.activeImage = document.querySelector(`.image[data-tab="0"]`)
+ this.activeImage.classList.add('show');
+
  this.leftButton.addEventListener('click', () => {this.decreaseIndexLeft()})
  this.rightButton.addEventListener('click', () =>  {this.increaseIndexRight()})
  }
@@ -17,10 +20,10 @@
  else {this.currentIndex = this.currentIndex-1};
 
 this.allImages = document.querySelectorAll('.image');
-this.allImages.forEach(img => img.style.display='none');
+this.allImages.forEach(img => img.classList.remove('show'));
 
 this.activeImage = document.querySelector(`.image[data-tab="${this.currentIndex}"]`);
-this.activeImage.style.display='block';
+this.activeImage.classList.add('show');
 
  }
  increaseIndexRight() {
@@ -30,10 +33,10 @@ this.activeImage.style.display='block';
  else {this.currentIndex = this.currentIndex + 1}
  
  this.allImages = document.querySelectorAll('.image');
- this.allImages.forEach(img => img.style.display='none');
+ this.allImages.forEach(img => img.classList.remove('show'));
 
  this.activeImage = document.querySelector(`.image[data-tab="${this.currentIndex}"]`);
- this.activeImage.style.display ='block';
+ this.activeImage.classList.add('show');
  }
 }
 
