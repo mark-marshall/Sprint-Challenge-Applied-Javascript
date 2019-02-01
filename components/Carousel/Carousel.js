@@ -3,9 +3,7 @@ class Carousel {
     //Set the current Index to 0
     this.currentIndex = 0;
     //Set the first image on load to image[0]
-    this.initialImage = document
-      .querySelector(`.image[data-tab="0"]`)
-      .classList.add('show');
+    this.initialImage = document.querySelector(`.image[data-tab="0"]`).classList.add('show');
     //Grab each of the buttons in preparation for the event listener
     this.leftButton = document.querySelector('.left-button');
     this.rightButton = document.querySelector('.right-button');
@@ -23,9 +21,11 @@ class Carousel {
     //Remove show class from all images
     this.allImages = document.querySelectorAll('.image');
     this.allImages.forEach(img => img.classList.remove('show'));
+    this.allImages.forEach(img => img.classList.remove('show-left'));
+    this.allImages.forEach(img => img.classList.remove('show-right'));
     //Grab active image and add show class
     this.activeImage = document.querySelector(`.image[data-tab="${this.currentIndex}"]`);
-    this.activeImage.classList.add('show');
+    this.activeImage.classList.add('show-left');
   }
   increaseIndexRight() {
     //Allow infinite looping
@@ -37,9 +37,11 @@ class Carousel {
     //Remove show class from all images
     this.allImages = document.querySelectorAll('.image');
     this.allImages.forEach(img => img.classList.remove('show'));
+    this.allImages.forEach(img => img.classList.remove('show-left'));
+    this.allImages.forEach(img => img.classList.remove('show-right'));
     //Grab active image and add show class
     this.activeImage = document.querySelector(`.image[data-tab="${this.currentIndex}"]`);
-    this.activeImage.classList.add('show');
+    this.activeImage.classList.add('show-right');
   }
 }
 
