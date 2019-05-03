@@ -7,6 +7,7 @@
   margin-top: 16px;
   @media(min-width: 1200px){
     width: 1200px;
+    animation: fadein 1.3s;
   }
   .left-button, .right-button {
     .flex(center);
@@ -38,4 +39,40 @@
     .width-100();
     display: none;
   }
+  .show {
+    display: block;
+  }
+  .show-left {
+    display: block;
+    animation: slide-left 0.1s ease-out;   
+  }
+  .show-right {
+    display: block;
+    animation: slide-right 0.1s ease-out;
+  }
+}
+
+@keyframes slide-right
+{
+    0% {
+      margin-right:15%;
+    }
+    100%{
+      margin-right:0%;
+    }
+}
+
+@keyframes slide-left
+{
+    0% {
+      margin-left:15%;
+    }
+    100%{
+      margin-left:0%;
+    }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

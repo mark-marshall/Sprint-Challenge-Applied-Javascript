@@ -41,7 +41,6 @@ body {
   justify-content: none;
   align-items: center;
   flex-direction: column;
-  background-color: #f1f1f1;
   color: #333;
   font-family: 'PT Sans', sans-serif;
 }
@@ -265,6 +264,7 @@ body {
 @media (min-width: 1200px) {
   .carousel {
     width: 1200px;
+    animation: fadein 1.3s;
   }
 }
 .carousel .left-button,
@@ -301,4 +301,39 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+}
+.carousel .show {
+  display: block;
+}
+.carousel .show-left {
+  display: block;
+  animation: slide-left 0.1s ease-out;
+}
+.carousel .show-right {
+  display: block;
+  animation: slide-right 0.1s ease-out;
+}
+@keyframes slide-right {
+  0% {
+    margin-right: 15%;
+  }
+  100% {
+    margin-right: 0%;
+  }
+}
+@keyframes slide-left {
+  0% {
+    margin-left: 15%;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
